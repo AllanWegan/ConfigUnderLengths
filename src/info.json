@@ -1,10 +1,11 @@
 {
-  "name": "longer-undergrounds",
-  "version": "0.0.3",
-  "title": "Longer Underground Belts",
-  "author": "Goobie",
-  "homepage": "https://goobie.io",
-  "dependencies": ["base >= 0.14.0"],
-  "description": "Extends length of underground belts and pipes",
-  "factorio_version": "0.16.22"
+  "name": "ConfigUnderLengths",
+  "title": "Configurable Underground Lengths",
+  "author": "Goobie (Longer Underground Belts), Allan Wegan alias Oktokolo",
+  "contact": "allanwegan@allanwegan.de",
+  "homepage": "https://github.com/AllanWegan/ConfigUnderLengths",
+  "description": "Makes maximum skippable tiles of vanilla and modded underground pipes and belts configurable.",
+  "factorio_version": "0.16",
+  "license": "GNU GPL-3.0",
+  "version": "0.1.0"
 }

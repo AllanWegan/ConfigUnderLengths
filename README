@@ -1,0 +1,17 @@
+ConfigUnderLengths allows to configure the amount of tiles, underground pipes and belts can skip.
+
+To be used with pure vanilla or mods that add or change tiers of underground pipes and/or belts.
+
+Supports setting the skippable tiles (maximum underground distance) of up to 5 tiers of pipes and 8 tiers of belts. Pipes/belts above tier 5/8 will inherit settings for tier 5/8.
+Allows to change selected tiers of pipes and/or belts only. Default values of -1 indicate to not change the value set by vanilla or mods.
+Tiers are detected by skippable tiles defined before applying configured values.
+
+Does not add any tiers itself and executes no code after the data-final-fixes phase for maximum mod compatibility. Tested with vanilla and bob's logistics, but should work fine with all mods not adding or altering underground pipes or belts in the data-final-fixes phase.
+
+
+This is a fork of Longer Underground Belts (<https://mods.factorio.com/mod/longer-undergrounds>, MIT license, made by goobie).
+
+
+History:
+
+- Version 0.1.0 is the first version of the fork and compatible to Factorio 0.16
