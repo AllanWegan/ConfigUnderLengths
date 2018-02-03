@@ -1,0 +1,10 @@
+{
+  "name": "longer-undergrounds",
+  "version": "0.0.3",
+  "title": "Longer Underground Belts",
+  "author": "Goobie",
+  "homepage": "https://goobie.io",
+  "dependencies": ["base >= 0.14.0"],
+  "description": "Extends length of underground belts and pipes",
+  "factorio_version": "0.16.22"
+}
