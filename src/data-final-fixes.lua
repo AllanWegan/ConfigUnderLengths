@@ -3,16 +3,39 @@ This file is part of the mod ConfigUnderLengths that is licensed under the
 GNU GPL-3.0. See the file COPYING for a copy of the GNU GPLv3.0.
 ]]
 
-function modify_underpipes()
+function modify_underpipes(debugOutputEnabled)
+  if debugOutputEnabled then
+    print("ConfigUnderLengths: Processing underground pipes...")
+  end
   local tiers = sort_tiers(get_underpipe_tiers())
-  for n, tier in pairs(tiers) do
-    n = math.min(5, n)
+  for tier_n, tier in pairs(tiers) do
+    local n = math.min(5, tier_n)
     local skip_dist = settings.startup["config-under-lengths-pipes-" .. n].value
-    if skip_dist ~= -1 then
-      for _, item in pairs(tier.items) do
-        item.max_underground_distance = skip_dist + 1
+    local tier_s = "" .. tier_n
+    if tier_n ~= n then
+      tier_s = tier_s .. " (treated as tier " .. n .. ")"
+    end
+    for _, proto in pairs(tier.protos) do
+      local con = proto.fluid_box.pipe_connections[2]
+      local old_skip_dist = con.max_underground_distance - 1
+      if skip_dist == -1 then
+        if debugOutputEnabled then
+          print(" Not changing underground pipe \"" .. proto.name
+          .. "\" of tier " .. tier_s .. " with skip distance " .. old_skip_dist)
+        end
+      else
+        if debugOutputEnabled then
+          print(" Changing underground pipe \"" .. proto.name
+          .. "\" of tier " .. tier_s)
+          print("  old skip distance: " .. old_skip_dist)
+          print("  new skip distance: " .. skip_dist)
+        end
+        con.max_underground_distance = skip_dist + 1
       end
     end
+  end
+  if debugOutputEnabled then
+    print("Done.")
   end
 end
 
@@ -27,26 +50,48 @@ function get_underpipe_tiers()
         local skip_dist_old = con.max_underground_distance - 1
         local tier = tiers[skip_dist_old]
         if not tier then
-          tier = {skip_dist_old=skip_dist_old, items={}}
+          tier = {skip_dist_old=skip_dist_old, protos={}}
           tiers[skip_dist_old] = tier
         end
-        table.insert(tier.items, con)
+        table.insert(tier.protos, proto)
       end
     end
   end
   return tiers
 end
 
-function modify_underbelts()
+function modify_underbelts(debugOutputEnabled)
+  if debugOutputEnabled then
+    print("ConfigUnderLengths: Processing underground belts...")
+  end
   local tiers = sort_tiers(get_underbelt_tiers())
-  for n, tier in pairs(tiers) do
-    n = math.min(8, n)
+  for tier_n, tier in pairs(tiers) do
+    local n = math.min(8, tier_n)
     local skip_dist = settings.startup["config-under-lengths-belts-" .. n].value
-    if skip_dist ~= -1 then
-      for _, item in pairs(tier.items) do
-        item.max_distance = skip_dist + 1
+    local tier_s = "" .. tier_n
+    if tier_n ~= n then
+      tier_s = tier_s .. " (treated as tier " .. n .. ")"
+    end
+    for _, proto in pairs(tier.protos) do
+      local old_skip_dist = proto.max_distance - 1
+      if skip_dist == -1 then
+        if debugOutputEnabled then
+          print(" Not changing underground belt \"" .. proto.name
+          .. "\" of tier " .. tier_s .. " with skip distance " .. old_skip_dist)
+        end
+      else
+        if debugOutputEnabled then
+          print(" Changing underground belt \"" .. proto.name
+          .. "\" of tier " .. tier_s)
+          print("  old skip distance: " .. old_skip_dist)
+          print("  new skip distance: " .. skip_dist)
+        end
+        proto.max_distance = skip_dist + 1
       end
     end
+  end
+  if debugOutputEnabled then
+    print("Done.")
   end
 end
 
@@ -57,10 +102,10 @@ function get_underbelt_tiers()
       local skip_dist_old = proto.max_distance - 1
       local tier = tiers[skip_dist_old]
       if not tier then
-        tier = {skip_dist_old=skip_dist_old, items={}}
+        tier = {skip_dist_old=skip_dist_old, protos={}}
         tiers[skip_dist_old] = tier
       end
-      table.insert(tier.items, proto)
+      table.insert(tier.protos, proto)
     end
   end
   return tiers
@@ -79,5 +124,6 @@ function sort_tiers(tiers)
   return tiers_sorted
 end
 
-modify_underpipes()
-modify_underbelts()
+local debugOutputEnabled = settings.startup["config-under-lengths-debug"].value
+modify_underpipes(debugOutputEnabled)
+modify_underbelts(debugOutputEnabled)

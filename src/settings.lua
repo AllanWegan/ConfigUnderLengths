@@ -120,4 +120,11 @@ data:extend({
         maximum_value = 100,
         default_value = -1,
     },
+    {
+        name = "config-under-lengths-debug",
+        type = "bool-setting",
+        order = "30",
+        setting_type = "startup",
+        default_value = false,
+    },
 })
