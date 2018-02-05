@@ -9,7 +9,7 @@ data:extend({
         order = "10",
         setting_type = "startup",
         minimum_value = -1,
-        maximum_value = 100,
+        maximum_value = 254,
         default_value = -1,
     },
     {
@@ -18,7 +18,7 @@ data:extend({
         order = "11",
         setting_type = "startup",
         minimum_value = -1,
-        maximum_value = 100,
+        maximum_value = 254,
         default_value = -1,
     },
     {
@@ -27,7 +27,7 @@ data:extend({
         order = "12",
         setting_type = "startup",
         minimum_value = -1,
-        maximum_value = 100,
+        maximum_value = 254,
         default_value = -1,
     },
     {
@@ -36,7 +36,7 @@ data:extend({
         order = "13",
         setting_type = "startup",
         minimum_value = -1,
-        maximum_value = 100,
+        maximum_value = 254,
         default_value = -1,
     },
     {
@@ -45,7 +45,7 @@ data:extend({
         order = "14",
         setting_type = "startup",
         minimum_value = -1,
-        maximum_value = 100,
+        maximum_value = 254,
         default_value = -1,
     },
     {
@@ -54,7 +54,7 @@ data:extend({
         order = "20",
         setting_type = "startup",
         minimum_value = -1,
-        maximum_value = 100,
+        maximum_value = 254,
         default_value = -1,
     },
     {
@@ -63,7 +63,7 @@ data:extend({
         order = "21",
         setting_type = "startup",
         minimum_value = -1,
-        maximum_value = 100,
+        maximum_value = 254,
         default_value = -1,
     },
     {
@@ -72,7 +72,7 @@ data:extend({
         order = "22",
         setting_type = "startup",
         minimum_value = -1,
-        maximum_value = 100,
+        maximum_value = 254,
         default_value = -1,
     },
     {
@@ -81,7 +81,7 @@ data:extend({
         order = "23",
         setting_type = "startup",
         minimum_value = -1,
-        maximum_value = 100,
+        maximum_value = 254,
         default_value = -1,
     },
     {
@@ -90,7 +90,7 @@ data:extend({
         order = "24",
         setting_type = "startup",
         minimum_value = -1,
-        maximum_value = 100,
+        maximum_value = 254,
         default_value = -1,
     },
     {
@@ -99,7 +99,7 @@ data:extend({
         order = "25",
         setting_type = "startup",
         minimum_value = -1,
-        maximum_value = 100,
+        maximum_value = 254,
         default_value = -1,
     },
     {
@@ -108,7 +108,7 @@ data:extend({
         order = "26",
         setting_type = "startup",
         minimum_value = -1,
-        maximum_value = 100,
+        maximum_value = 254,
         default_value = -1,
     },
     {
@@ -117,7 +117,7 @@ data:extend({
         order = "27",
         setting_type = "startup",
         minimum_value = -1,
-        maximum_value = 100,
+        maximum_value = 254,
         default_value = -1,
     },
     {
