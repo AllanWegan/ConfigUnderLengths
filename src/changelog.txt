@@ -2,26 +2,31 @@
 Version: 0.1.0
 Date: 2018-02-03
   Info:
-    - First version of the fork and compatible with Factorio 0.16
+    - First version of the fork and compatible with Factorio 0.16.
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.1
 Date: 2018-02-05
   Info:
-    - Added optional debug output to console on start
+    - Added optional debug output to console on start.
   Bugfixes:
-    - Maximum configurable skip distance is now 254 (maximum allowed by game)
+    - Maximum configurable skip distance is now 254 (maximum allowed by game).
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.2
 Date: 2019-03-09
   Info:
-    - Version bump for Factorio 0.17
+    - Version bump for Factorio 0.17.
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.3
 Date: 2020-02-03
   Info:
-    - Version bump for Factorio 0.18
+    - Version bump for Factorio 0.18.
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.4
 Date: 2020-02-05
   Info:
-    - Added a changelog.txt
+    - Added a changelog.txt.
+---------------------------------------------------------------------------------------------------
+Version: 0.1.5
+Date: 2020-12-14
+  Info:
+    - Version bump for Factorio 1.1.
